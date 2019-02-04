@@ -3,14 +3,14 @@
 
 void Database::add(Student && student)
 {
-	allPeople.emplace_back(student);
+	   allPeople.emplace_back(student);
 }
 
 void Database::show()
 {
-	for (auto & it : allPeople)
-		std::cout << it << std::endl;
-	std::cout << std::endl;
+    for (auto & it : allPeople)
+	       std::cout << it << std::endl;
+    std::cout << std::endl;
 }
 
 //std::ostream& Database::operator<<(std::ostream& os)
@@ -21,23 +21,23 @@ void Database::show()
 //}
 void Database::sort()
 {
-	struct {
-		bool operator()(const Student & a, const Student & b) const
-		{
-			return a.getIndex() <= b.getIndex();
-		}
-	} compareIndex;
+    struct {
+	       bool operator()(const Student & a, const Student & b) const
+	       {
+		          return a.getIndex() <= b.getIndex();
+	       }
+    } compareIndex;
 	std::sort(allPeople.begin(),allPeople.end(), compareIndex);
 }
 void Database::remove(int nr_index)
 {
-	int i;
-	for( i = 0; i < allPeople.size(); ++i )
-		if (allPeople[i].getIndex() == nr_index)
-		{
-			allPeople.erase(allPeople.begin() + i);
-			break;
-		}
+    int i;
+    for( i = 0; i < allPeople.size(); ++i )
+        if (allPeople[i].getIndex() == nr_index)
+        {
+            allPeople.erase(allPeople.begin() + i);
+            break;
+        }
 	/*Student sought_student = Student(nr_index);
 	const auto sought = std::find(allPeople.begin(), allPeople.end(), sought_student);
 	if (sought != allPeople.end())
