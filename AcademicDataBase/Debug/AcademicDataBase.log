@@ -1,3 +1,3 @@
-﻿  main.cpp
-c:\users\administrator\documents\programowanie\projekty\c++\academicdatabase\academicdatabase\pesel.h(32): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+﻿  Database.cpp
+c:\users\administrator\documents\programowanie\projekty\c++\academicdatabase\academicdatabase\database.cpp(35): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
   AcademicDataBase.vcxproj -> C:\Users\Administrator\Documents\Programowanie\Projekty\C++\AcademicDataBase\Debug\AcademicDataBase.exe

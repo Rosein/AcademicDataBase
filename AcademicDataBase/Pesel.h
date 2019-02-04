@@ -8,7 +8,8 @@ class Pesel
 	int controlCoefficient(int);
 public:
 	bool isValid();
-	std::ostream& operator<<(std::ostream&);
+	friend bool operator==(Pesel, Pesel);
+	friend std::ostream& operator<<(std::ostream&, const Pesel & p);
 	Pesel(const char nr[]) : nr(nr) {}
 	~Pesel() {}
 };

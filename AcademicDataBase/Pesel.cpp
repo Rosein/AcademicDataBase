@@ -24,8 +24,11 @@ bool Pesel::isValid()
 	return control_sum % 10 == parseToInteger(nr[nr.size() - 1]);
 }
 
-
-
-Pesel::~Pesel()
+std::ostream& operator<<(std::ostream& os, const Pesel & p)
 {
+	return os << p.nr;
+}
+bool operator==(Pesel first, Pesel second)
+{
+	return first.nr == second.nr;
 }

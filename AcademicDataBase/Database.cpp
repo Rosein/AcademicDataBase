@@ -1,13 +1,49 @@
 #include "Database.h"
+#include <algorithm>
 
-void Database::add(Person & person)
+void Database::add(Student && student)
 {
-	allPeople.emplace_back(std::make_unique<Person>(person));
+	allPeople.emplace_back(student);
 }
 
-std::ostream& Database::operator<<(std::ostream& os)
+void Database::show()
 {
+	for (auto & it : allPeople)
+		std::cout << it << std::endl;
+	std::cout << std::endl;
+}
 
+//std::ostream& Database::operator<<(std::ostream& os)
+//{
+//	for (auto & it : allPeople)
+//		os << it << std::endl;
+//	return os;
+//}
+void Database::sort()
+{
+	struct {
+		bool operator()(const Student & a, const Student & b) const
+		{
+			return a.getIndex() <= b.getIndex();
+		}
+	} compareIndex;
+	std::sort(allPeople.begin(),allPeople.end(), compareIndex);
+}
+void Database::remove(int nr_index)
+{
+	int i;
+	for( i = 0; i < allPeople.size(); ++i )
+		if (allPeople[i].getIndex() == nr_index)
+		{
+			allPeople.erase(allPeople.begin() + i);
+			break;
+		}
+	/*Student sought_student = Student(nr_index);
+	const auto sought = std::find(allPeople.begin(), allPeople.end(), sought_student);
+	if (sought != allPeople.end())
+	{
+		allPeople.erase(sought);
+	}*/
 }
 Database::Database()
 {
