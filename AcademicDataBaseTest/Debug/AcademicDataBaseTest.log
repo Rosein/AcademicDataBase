@@ -1,4 +1,0 @@
-﻿cl : Wiersz polecenia warning D9035: Opcja "Gm" jest przestarzała i będzie usunięta w przyszłych wydaniach
-  test.cpp
-c:\users\administrator\documents\programowanie\projekty\c++\academicdatabase\academicdatabase\pesel.h(32): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
-  AcademicDataBaseTest.vcxproj -> C:\Users\Administrator\Documents\Programowanie\Projekty\C++\AcademicDataBase\Debug\AcademicDataBaseTest.exe
